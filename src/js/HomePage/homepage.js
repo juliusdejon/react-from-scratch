@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
-import Input from "../components/input";
+import Input from "../components/generic-input";
 
 import logo from "../../img/reactJS.gif";
 
 import "./homepage.scss";
+import GenericInput from "../components/generic-input";
 
 class HomePage extends Component {
   constructor() {
@@ -23,12 +24,13 @@ class HomePage extends Component {
       <article>
         <img src={logo} alt="react-git" className="logo" />
         <form id="article-form">
-          <Input
+          <GenericInput
             text="SEO title"
             label="seo_title"
             type="text"
             id="seo_title"
             value={seo_title}
+            placeholder={"Enter SEO"}
             handleChange={this.handleChange}
           />
         </form>

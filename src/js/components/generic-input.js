@@ -1,12 +1,23 @@
 import React from "react";
+import { Input } from "semantic-ui-react";
 import PropTypes from "prop-types";
 
-const Input = ({ label, text, type, id, value, handleChange }) => (
+const GenericInput = ({
+  label,
+  text,
+  type,
+  id,
+  value,
+  placeholder,
+  handleChange
+}) => (
   <div className="form-group">
     <label htmlFor={label}>{text}</label>
-    <input
+    <Input
+      focus
+      placeholder={placeholder}
       type={type}
-      className="form-control"
+      className="ui focus input"
       id={id}
       value={value}
       onChange={handleChange}
@@ -15,13 +26,14 @@ const Input = ({ label, text, type, id, value, handleChange }) => (
   </div>
 );
 
-Input.propTypes = {
+GenericInput.propTypes = {
   label: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired
 };
 
-export default Input;
+export default GenericInput;
