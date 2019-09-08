@@ -21,6 +21,7 @@ class HomePage extends Component {
         <form id="article-form">
           <GenericInput
             id="name"
+            type="text"
             value={name}
             placeholder={"I'm a Generic Input"}
             handleChange={this.handleChange}
