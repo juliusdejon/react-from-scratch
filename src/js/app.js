@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+
+import "./app.scss";
 
 import HomePage from "./HomePage/homepage";
-import Navbar from "./components/layout/navbar";
+import Navbar from "./components/layout/navbar/navbar";
+import Sidebar from "./components/layout/sidebar/sidebar";
 
 function App() {
+  const [toggleSidebar, setToggleSidebar] = useState(true);
+  const handleHamburgerButtonClick = () => {
+    toggleSidebar ? setToggleSidebar(false) : setToggleSidebar(true);
+  };
   return (
-    <React.Fragment>
-      <Navbar />
+    <div className="app">
+      <Navbar handleHamburgerButtonClick={handleHamburgerButtonClick} />
+      {toggleSidebar && <Sidebar />}
       <HomePage />
-    </React.Fragment>
+    </div>
   );
 }
 
