@@ -1,0 +1,21 @@
+.hamburger-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 28px;
+  width: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-button:focus {
+  outline: none;
+}
+
+.hamburger-button-line {
+  width: 28px;
+  height: 3px;
+  background: #f9af42;
+}
