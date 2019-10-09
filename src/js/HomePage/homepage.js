@@ -1,10 +1,12 @@
 import React from "react";
 import { Feed, Icon, Header, Container } from "semantic-ui-react";
 import "./homepage.scss";
+import Example from "../components/barchart.js";
 
 const HomePage = () => (
   <Container>
     <Header>HomePage</Header>
+    <Example />
     <Feed>
       <Feed.Event>
         <Feed.Label>
