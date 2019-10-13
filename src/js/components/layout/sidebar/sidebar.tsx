@@ -2,8 +2,8 @@ import * as React from "react";
 
 import "./sidebar.scss";
 
-const Sidebar = props => (
-  <nav className="sidebar">
+const Sidebar: React.SFC = () => (
+  <aside className="sidebar">
     <ul>
       <li>
         <a>Add Employee</a>
@@ -12,7 +12,7 @@ const Sidebar = props => (
         <a>Add Payroll</a>
       </li>
     </ul>
-  </nav>
+  </aside>
 );
 
 export default Sidebar;

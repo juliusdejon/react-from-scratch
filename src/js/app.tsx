@@ -13,11 +13,16 @@ function App() {
   const handleHamburgerButtonClick = () => {
     toggleSidebar ? setToggleSidebar(false) : setToggleSidebar(true);
   };
+
+  const mainStyle = toggleSidebar ? { marginLeft: "200px" } : {};
+
   return (
     <div className="app">
       <Navbar handleHamburgerButtonClick={handleHamburgerButtonClick} />
       {toggleSidebar && <Sidebar />}
-      <HomePage />
+      <main style={mainStyle}>
+        <HomePage />
+      </main>
     </div>
   );
 }
