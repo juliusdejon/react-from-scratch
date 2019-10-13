@@ -2,7 +2,7 @@ import * as React from "react";
 
 import "./app.scss";
 
-import HomePage from "./HomePage/homepage";
+import { HomePage } from "./homepage/homepage";
 import Navbar from "./components/layout/navbar/navbar";
 import Sidebar from "./components/layout/sidebar/sidebar";
 
