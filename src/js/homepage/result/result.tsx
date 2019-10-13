@@ -1,6 +1,9 @@
 import * as React from "react";
 
 import { Table, Divider, Tag } from "antd";
+import { HomePageContext } from "../store/store";
+
+const { useContext } = React;
 
 const columns = [
   {
@@ -75,10 +78,18 @@ const data = [
     tags: ["cool", "teacher"]
   }
 ];
-const Result: React.FC = () => (
-  <section>
-    <Table columns={columns} dataSource={data} />
-  </section>
-);
+const Result: React.FC = () => {
+  const [state, updateState] = useContext(HomePageContext);
+  return (
+    <section>
+      <Table columns={columns} dataSource={state.data} />
+      <button
+        onClick={() => updateState({ type: "GET_EMPLOYEES", payload: data })}
+      >
+        GET EMPLOYEES
+      </button>
+    </section>
+  );
+};
 
 export { Result };

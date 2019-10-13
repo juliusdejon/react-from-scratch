@@ -4,6 +4,7 @@ import "./homepage.scss";
 
 import { Search } from "./search/search";
 import { Result } from "./result/result";
+import { Store } from "./store/store";
 
 const { Title } = Typography;
 const { useState } = React;
@@ -26,19 +27,21 @@ const HomePage: React.FC = () => {
 
   return (
     <article>
-      <Title>Home</Title>
-      <nav>
-        <Breadcrumb>
-          <Breadcrumb.Item onClick={() => toggleBreadcrumb("search")}>
-            Search
-          </Breadcrumb.Item>
-          <Breadcrumb.Item onClick={() => toggleBreadcrumb("result")}>
-            Result
-          </Breadcrumb.Item>
-        </Breadcrumb>
-      </nav>
+      <Store>
+        <Title>Home</Title>
+        <nav>
+          <Breadcrumb>
+            <Breadcrumb.Item onClick={() => toggleBreadcrumb("search")}>
+              Search
+            </Breadcrumb.Item>
+            <Breadcrumb.Item onClick={() => toggleBreadcrumb("result")}>
+              Result
+            </Breadcrumb.Item>
+          </Breadcrumb>
+        </nav>
 
-      {searchResult ? <Result /> : <Search search={search} />}
+        {searchResult ? <Result /> : <Search search={search} />}
+      </Store>
     </article>
   );
 };
