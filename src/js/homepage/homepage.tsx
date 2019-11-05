@@ -1,10 +1,12 @@
-import * as React from "react";
 import { Breadcrumb, Typography } from "antd";
+import * as React from "react";
+import { RotundaTable } from "../components/table";
 import "./homepage.scss";
-
-import { Search } from "./search/search";
 import { Result } from "./result/result";
+import { Search } from "./search/search";
 import { Store } from "./store/store";
+
+
 
 const { Title } = Typography;
 const { useState } = React;
@@ -42,7 +44,9 @@ const HomePage: React.FC = () => {
 
         {searchResult ? <Result /> : <Search search={search} />}
       </Store>
+      <RotundaTable />
     </article>
   );
 };
 export { HomePage };
+
