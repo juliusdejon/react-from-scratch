@@ -4,9 +4,8 @@ import { RotundaTable } from "../components/table";
 import "./homepage.scss";
 import { Result } from "./result/result";
 import { Search } from "./search/search";
+import { Filter } from "./filter/filter";
 import { Store } from "./store/store";
-
-
 
 const { Title } = Typography;
 const { useState } = React;
@@ -31,7 +30,7 @@ const HomePage: React.FC = () => {
     <article>
       <Store>
         <Title>Home</Title>
-        <nav>
+        {/* <nav>
           <Breadcrumb>
             <Breadcrumb.Item onClick={() => toggleBreadcrumb("search")}>
               Search
@@ -40,13 +39,15 @@ const HomePage: React.FC = () => {
               Result
             </Breadcrumb.Item>
           </Breadcrumb>
-        </nav>
+        </nav> */}
 
-        {searchResult ? <Result /> : <Search search={search} />}
+        {/* {searchResult ? <Result /> : <Search search={search} />} */}
+        <section className="container">
+          <Result />
+          <Filter />
+        </section>
       </Store>
-      <RotundaTable />
     </article>
   );
 };
 export { HomePage };
-
