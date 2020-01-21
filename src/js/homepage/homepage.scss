@@ -7,3 +7,20 @@ article {
   display: flex;
   flex-direction: row;
 }
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 200px;
+  color: white;
+  background: #ff9800;
+  border: 1px solid #ff9800;
+  border-radius: 6px;
+}
